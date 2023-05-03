@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\V1\SkillController;
 
 Route::group(['prefix' => 'v1'], function() {
 
-    Route::apiResource('skills', SkillController::class);
+    Route::apiResource('skills', SkillController::class);//automatically creates the routes needed e.g PUT,POST,GET,DELETE which will be handled by skillcontroller
+    
 
 });
