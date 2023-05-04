@@ -28,7 +28,7 @@ class SkillController extends Controller
 
     public function update(StoreSkillRequest $req, Skill $skill)
     {
-            $skill->update($req->validated());
+            $skill->update($req->validated());//validated request update to the particular id in Skill table
             return response()->json("Skill Updated");
 
     }
