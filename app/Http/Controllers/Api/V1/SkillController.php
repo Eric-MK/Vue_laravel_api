@@ -23,5 +23,7 @@ class SkillController extends Controller
         /* This method returns an array containing only the validated request data, which can then be passed directly to the create method of the Skill model to create a new instance. */
 
         Skill::create($req->validated());
+        return response()-json("Skill Created");
     }
+
 }
