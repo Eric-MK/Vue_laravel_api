@@ -23,7 +23,7 @@ class StoreSkillRequest extends FormRequest
     {
         return [
             'name' => ['required','min:3','max:20'],
-            'slug' => ['required','unique:skills,slug,id']//The slug field is required and must be unique in the skills table, except for the current record
+            'slug' => ['required','unique:skills,slug']//The slug field is required and must be unique in the skills table, except for the current record
         ];
     }
 }
