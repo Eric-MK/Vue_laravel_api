@@ -13,7 +13,7 @@ class SkillController extends Controller
     public function index()
     {
 
-        return response()->json("skill index");
+        return Skill::all();
     }
     public function show(Skill $skill)
     {
