@@ -13,7 +13,7 @@ class SkillController extends Controller
     public function index()
     {
 
-        return Skill::all();
+       return Skill::all();
     }
     public function show(Skill $skill)
     {
@@ -37,5 +37,11 @@ class SkillController extends Controller
             $skill->update($req->validated());//validated request update to the particular id in Skill table
             return response()->json("Skill Updated");
 
+    }
+
+    public function destroy(Skill $skill)
+    {
+        $skill->delete();
+        return response()->json("Skill deleted");
     }
 }
