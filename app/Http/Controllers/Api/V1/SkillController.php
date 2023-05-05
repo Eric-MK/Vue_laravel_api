@@ -6,6 +6,7 @@ use App\Models\Skill;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSkillRequest;
+use App\Http\Resources\V1\SkillResource;
 
 class SkillController extends Controller
 {
@@ -14,10 +15,10 @@ class SkillController extends Controller
 
         return response()->json("skill index");
     }
-    public function show(Skill $skill)//This Skill object is automatically resolved by Laravel's route model binding feature, which retrieves the Skill object from the database based on the ID specified in the URL.
+    public function show(Skill $skill)
     {
 
-        return $skill;// will be automatically converted to a JSON response by Laravel. This means that when a GET request is made to the /skills/{skill} URL, this method will be called and the details of the specified Skill object will be returned in JSON format.
+        return new SkillResource($skill);
     }
 
     /*     Laravel will automatically validate the incoming request data using the rules defined in the StoreSkillRequest class.
